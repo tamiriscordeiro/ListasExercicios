@@ -2,7 +2,7 @@
 
 User Function AreaTriangulo()
 //- Escreva um algoritmo para ler as dimensões de um retângulo (base e altura), calcular e escrever
-// a área desse retângulo..
+// a área desse retângulo.
 
 local cBase     := ""
 local nBase     := 0
