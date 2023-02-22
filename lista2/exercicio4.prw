@@ -7,19 +7,18 @@ User Function CadaQuad()
     nDif    := 0
     nA      := 0
     nB      := 0
-    nQA     := 0
-    nQB     := 0
+    nQuad   := 0
 
     nA := FwInputBox('Digite o primeiro valor: ')
         nA := val(nA)
-        nQA := nA ^ 2
 
     nB:= FwInputBox('Digite o segundo valor: ')
         nB := val(nB)
-        nQB := nB ^ 2
 
-    nDif := nQA - nQB
+    nDif := ((nA) - (nB))
 
-    FwAlertSuccess("A diferença dos quadrados desses valores é:  " + alltrim(Str(nDif)))
+    nQuad := nDif ^ 2
+
+    FwAlertSuccess("A diferença dos quadrados desses valores é:  " + alltrim(Str(nQuad)))
 
 Return
