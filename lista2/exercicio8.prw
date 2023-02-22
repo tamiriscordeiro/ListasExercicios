@@ -1,30 +1,32 @@
-// 7 - Ler a hora de início e a hora de fim de um jogo de Poker (considere apenas horas inteiras, 
-// sem os minutos) e calcule a duração do jogo em horas,
-// sabendo-se que o tempo máximo de duração do jogo é de 24 horas e que o jogo pode iniciar em um
-// dia e terminar no dia seguinte.
+// 8 - Faça um algoritmo para ler um nome de usuário (user name) e uma senha. Caso correspondam aos
+// dados armazenados internamente no programa através do uso de constantes (“chumbado” / hard
+// coded), deve ser apresentada a mensagem “Acesso permitido”. Caso o usuário/senha não
+// coincidam, exibir a mensagem “Usuário ou senha inválido”. A verificação da senha só deverá
+// ocorrer caso o usuário coincida, porém o usuário não deve saber especificamente se foi o nome de
+// usuário ou a senha que não coincidiu.
 
 #INCLUDE "TOTVS.CH"
+#DEFINE S 54321
 
-User Function HorasPoker()
-   Local nHoraIni := 0
-   Local nHoraFim := 0
-   Local nTotal  := 0
+User Function ChecaUsuario()
+    local cUsuario  := ''
+    local cUser     := 'USUARIO'
+    local nSenha    := 0
 
-    nHoraIni := (FwInputBox('Digite a hora que o jogo começou: ')) //Hora que começou o jogo
-        nHoraIni := val(nHoraIni)
+    cUsuario := FwInputBox('Usuário: ' , cUsuario)
 
-    nHoraFim := (FwInputBox('Digite a hora que o jogo acabou: ')) //Hora que acabou o jogo
-        nHoraFim := val(nHoraFim)
+    nSenha := FwInputBox('Senha: ')
+        nSenha:= val(nSenha)
 
+    if (cUsuario <> cUser)
+        FwAlertError('Usuário ou Senha Inválidos')
+    elseif (cUsuario = cUser)
+        if (nSenha <> S)
+            FwAlertError('Usuário ou Senha Inválidos')
+        else
+            FwAlertSuccess('Acesso Permitido!')
+        endif 
+    endif 
     
-    nTotal := nHoraIni - nHoraFim  //Calcula quantas horas durou o jogo.
-
-    if nHoraIni >= nHoraFim
-        nTotal := ( nHoraFim - nHoraIni ) + 24 //Se a hora inicial for menor que a final, soma-se 24 horas porque o jogo durou até o outro dia. 
-        FwAlertSuccess('O jogo levou ' + alltrim(Str(nTotal)) + ' horas.', 'Jogo de Poker')
-    else
-        nTotal := ( nHoraFim - nHoraIni )
-        FwAlertSuccess('O jogo levou ' + alltrim(Str(nTotal)) + ' horas.', 'Jogo de Poker') //Caso contrário o jogo durou o total de horas calculado
-    endif
-
 Return
+
