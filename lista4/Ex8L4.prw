@@ -2,7 +2,7 @@
 
 #INCLUDE 'TOTVS.CH'
 
-User Function L04Ex08()
+User Function Ex8L4()
     Local nPeso  := SPACE(6)
     Local nAltura  := SPACE(3)
     Local nOpcao := 0
