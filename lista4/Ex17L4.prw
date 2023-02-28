@@ -2,7 +2,7 @@
 
 #INCLUDE 'TOTVS.CH'
 
-User Function CadZZE()
+User Function Ex17L4()
 
     Local cAlias := 'ZZS', cTitulo := 'Cadastro de alunos '
 
