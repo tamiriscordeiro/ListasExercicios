@@ -57,6 +57,18 @@ Static Function ViewDef()
   
   oView := FWFormView():New()
   oView:SetModel(oModel)
+
+  oStruZS1:RemoveField('ZS1_DESC')
+  oStruZS1:RemoveField('ZS1_CODVEI')
+
+  oStruZS3:RemoveField('ZS3_DATNAS')
+  oStruZS3:RemoveField('ZS3_DATHAB')
+  oStruZS3:RemoveField('ZS3_ESCOLA')
+
+  oStruZS4:RemoveField('ZS4_NASC')
+  oStruZS4:RemoveField('ZS4_CPF')
+  oStruZS4:RemoveField('ZS4_AULAS')
+  oStruZS4:RemoveField('ZS4_CODINS')
   
   oView:AddField('VIEW_ZS1', oStruZS1, 'ZS1MASTER')
   oView:AddGrid('VIEW_ZS3', oStruZS3, 'ZS3DETAIL')
