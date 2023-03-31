@@ -17,6 +17,12 @@ User Function CADTAR()
     oBrowse:SetAlias(cAlias)
     oBrowse:SetDescription(cTitle)
     oBrowse:DisableDetails()
+    oBrowse:DisableReport()
+
+    oBrowse:AddLegend('ZS7_TIPO == "001"',  'BLUE',     "Trabalho",      '1')
+    oBrowse:AddLegend('ZS7_TIPO == "002"',  'PINK',     "Pessoal",       '1')
+    oBrowse:AddLegend('ZS7_TIPO == "003"',  'GREEN',    "Estudos",       '1')
+
     oBrowse:Activate()
     
 Return
@@ -75,5 +81,11 @@ Static Function ViewDef()
 
 Return oView
 
-    
-Return 
+User Function TipoT()
+    local cTipo := ""
+
+    cTipo += "001=Trabalho;"
+    cTipo += "002=Pessoal;"
+    cTipo += "003=Estudos;"
+
+Return cTipo
